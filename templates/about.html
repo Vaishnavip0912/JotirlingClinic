@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us - Jotirling Clinic</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+  <h1>🌿 Jotirling Clinic</h1>
+  <p>About Us</p>
+</header>
+
+<nav>
+  <a href="{{ url_for('home') }}">Home</a>
+  <a href="{{ url_for('about') }}">About Us</a>
+  <a href="{{ url_for('services_page') }}">Services</a>
+  <a href="{{ url_for('gallery') }}">Gallery</a>
+  <a href="{{ url_for('appointment') }}">Appointment</a>
+  <a href="{{ url_for('contact') }}">Contact</a>
+
+</nav>
+
+<div class="container">
+  <section id="about">
+    <h2>Welcome to Jotirling Clinic</h2>
+    <p>
+      At Jotirling Clinic, we are committed to delivering compassionate and personalized healthcare.
+      Founded in 2010 by Dr. Sachin Ghadage, our clinic has grown into a trusted name in the community,
+      offering a wide range of medical services from preventive care to chronic disease management.
+    </p>
+
+    <h3>🌿 Our Mission</h3>
+    <p>
+      To provide high-quality, affordable, and patient-centered healthcare in a nurturing and respectful environment.
+      We aim to make healthcare more accessible while maintaining a strong focus on empathy and trust.
+    </p>
+
+    <h3>🌟 Our Vision</h3>
+    <p>
+      To be recognized as a leading healthcare provider in the region, known for innovation, care excellence,
+      and community well-being.
+    </p>
+
+    <h3>👨‍⚕️ Meet Our Doctor</h3>
+    <div class="doctor">
+      <h4>Dr. Sachin Ghadage, MBBS, MD</h4>
+      <img src="{{ url_for('static', filename='doctor.jpg') }}" alt="Dr. Sachin Ghadage" style="max-width:200px; border-radius:10px;">
+      <p>
+        With over 15 years of experience in General Medicine and Family Healthcare, Dr. Sachin leads the clinic with passion and integrity.
+        He specializes in lifestyle disorders, diabetes management, and preventive medicine.
+      </p>
+    </div>
+
+    <h3>💚 Why Choose Us?</h3>
+    <ul>
+      <li>✔️ Personalized attention and care</li>
+      <li>✔️ Experienced and empathetic staff</li>
+      <li>✔️ Advanced diagnostic tools</li>
+      <li>✔️ Quick appointments and minimal wait time</li>
+      <li>✔️ Clean, modern, and welcoming clinic environment</li>
+    </ul>
+
+    <p>
+      Whether it's a routine check-up or managing a chronic condition, we are here to guide you at every step of your health journey.
+      Come visit us and experience healthcare the way it should be.
+    </p>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2025 Jotirling Clinic. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

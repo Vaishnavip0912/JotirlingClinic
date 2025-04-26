@@ -1,0 +1,352 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url("images/clinic-bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #004d00;
+}
+
+header {
+  background-color: rgba(0, 102, 0, 0.8);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+nav {
+  background-color: #006600;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+nav a:hover {
+  background-color: #004d00;
+  border-radius: 5px;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 1000px;
+  border-radius: 10px;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  border-bottom: 2px solid #006600;
+  padding-bottom: 0.5rem;
+  color: #006600;
+}
+
+label, input, textarea {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+input, textarea {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #006600;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004d00;
+}
+
+.gallery img, .doctor img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.testimonial, .service {
+  border-left: 5px solid #009900;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f6fff6;
+  border-radius: 5px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #dfffdc;
+  margin: 15% auto;
+  padding: 20px;
+  border: 2px solid #00aa00;
+  width: 80%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #006600;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+/* Service section layout */
+.service-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.service-card {
+  width: 220px;
+  background-color: #e6f5e6;
+  border: 1px solid #b2d8b2;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 128, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+.service-card img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.service-card h3 {
+  color: #006400;
+  font-size: 1.2em;
+  margin-top: 0;
+}
+/* Gallery Section */
+#gallery {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Gallery Grid Layout */
+.gallery-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Each Gallery Item Styled Like Service Cards */
+.gallery-item {
+  width: 180px;
+  height: 220px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+/* Gallery Images */
+.gallery-item img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover; /* Ensures image fills space without distortion */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Optional Title Under Image */
+.gallery-item h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+
+  /* Popup Overlay */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;  /* Ensure overlay is on top */
+  }
+
+  /* Popup Box */
+  .popup-box {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 80%;
+    max-height: 80%;
+    overflow: auto;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;  /* To position the close button correctly */
+  }
+
+  /* Popup Image */
+  .popup-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  /* Title Styling */
+  .popup-box h2 {
+    font-size: 1.8em;
+    color: #006400;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  /* Description Styling */
+  .popup-box p {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  /* Close Button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 1000;  /* Ensure close button is above the content */
+  }
+
+  .close-btn:hover {
+    color: red;
+  }
+<style>
+  .success {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+</style>
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.action-buttons form {
+  margin: 0;
+}
+<style>
+  /* Table Styling */
+  table {
+    width: 100%; /* Make the table span the full width */
+    max-width: 1200px; /* Max width of the table */
+    margin-top: 1rem;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    table-layout: fixed; /* Make the columns fixed */
+  }
+
+  table th, table td {
+    padding: 20px; /* Increased padding for more space */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    height: 50px; /* Increase row height */
+  }
+
+  table th {
+    background-color: #28a745;
+    color: white;
+  }
+
+  table tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  /* Adjusting the buttons in the actions column */
+  .actions form {
+    display: inline;
+    margin-right: 10px;
+  }
+
+  button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px; /* Increase button size */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+</style>
+

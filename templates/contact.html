@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Jotirling Clinic</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+  <h1>🌿 Jotirling Clinic</h1>
+  <p>Contact Us</p>
+</header>
+
+<nav>
+  <a href="{{ url_for('home') }}">Home</a>
+  <a href="{{ url_for('about') }}">About Us</a>
+  <a href="{{ url_for('services_page') }}">Services</a>
+  <a href="{{ url_for('gallery') }}">Gallery</a>
+  <a href="{{ url_for('appointment') }}">Appointment</a>
+  <a href="{{ url_for('contact') }}">Contact</a>
+</nav>
+
+<div class="container">
+  <section class="section-box">
+    <h2>Get in Touch</h2>
+    <p>We'd love to hear from you! Feel free to reach out to us through the details below.</p>
+
+    <div style="margin-top: 2rem;">
+      <h3>Clinic Address</h3>
+      <p>📍 Add. Sr. No. 20/1, Ambegaon Bd, Uniti Medical, Opposite Vilas Tapkir STD, Dhankwadi, Pune, Maharashtra - 411046 </p>
+      <p>📞 Phone: +91 9970865752</p>
+      <p>📧 Email: info@jotirlingclinic.com</p>
+      <p>📍 Landmark: Opposite City Park, near HealthMart Pharmacy</p>
+      <p>🕒 Clinic Hours: Monday to Saturday - 9:00 AM to 7:00 PM</p>
+      <p>🚨 Emergency Contact: +91 91234 56789 (24/7 Support)</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2025 Jotirling Clinic. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

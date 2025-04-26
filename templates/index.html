@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jotirling Clinic</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #006600;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      background-color: #004d00;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #006600;
+      border-radius: 5px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #006600;
+      border-bottom: 3px solid #006600;
+      padding-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    a {
+      color: #006600;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid #006600;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #004d00;
+      border-color: #004d00;
+    }
+
+    footer {
+      background-color: #006600;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-box {
+      background-color: #e0f7e0;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial {
+      background-color: #f1fff1;
+      padding: 1.5rem;
+      border-left: 5px solid #4caf50;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial p {
+      font-style: italic;
+    }
+
+    .testimonial h4 {
+      margin-top: 1rem;
+      color: #006600;
+    }
+
+    .cta {
+      background-color: #ccffcc;
+      text-align: center;
+      padding: 2rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .cta h3 {
+      margin-bottom: 1rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: #006600;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .cta a:hover {
+      background-color: #004d00;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🌿 Jotirling Clinic</h1>
+  <p>Your Health, Our Priority</p>
+</header>
+
+<nav>
+  <a href="{{ url_for('about') }}">About Us</a>
+  <a href="{{ url_for('services_page') }}">Services</a>
+  <a href="{{ url_for('gallery') }}">Gallery</a>
+  <a href="{{ url_for('appointment') }}">Appointment</a>
+  <a href="{{ url_for('contact') }}">Contact</a>
+</nav>
+
+<div class="container">
+
+
+  <!-- About Us Section -->
+  <section class="section-box">
+    <h2>About Us</h2>
+    <p>Welcome to Jotirling Clinic. We are dedicated to providing compassionate and quality healthcare services for you and your family. Our doctors are here to guide you through every step of your wellness journey.</p>
+    <p><a href="{{ url_for('about') }}">Learn more about us</a></p>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section-box">
+    <h2>Our Services</h2>
+    <p>We provide a range of medical services including General Checkups, Pediatrics, Dental Care, Women's Health, and more. We use modern medical equipment and techniques to ensure the best outcomes.</p>
+    <p><a href="{{ url_for('services_page') }}">Explore our services</a></p>
+  </section>
+
+  
+  <!-- Testimonials Section -->
+  <section class="section-box">
+    <h2>What Our Patients Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>"Amazing care and very friendly staff. I highly recommend Jotirling Clinic!"</p>
+        <h4>- Aarti P.</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Clean clinic, efficient service, and caring doctors. Thank you for your support."</p>
+        <h4>- Nikhil R.</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Helped my child with a quick and accurate diagnosis. I trust them completely."</p>
+        <h4>- Priya D.</h4>
+      </div>
+    </div>
+  </section>
+
+ <!-- CTA -->
+  <div class="cta">
+    <h3>Need to see a doctor?</h3>
+    <P>Booking an appointment at Jotirling Clinic is simple and fast. Choose a convenient time slot, and our team will be ready to assist you. Our doctors are dedicated to giving you timely care and personalized attention in a comfortable environment.</P>
+    <p>Book your appointment now and let us take care of your health.</p>
+    <P>Schedule your visit now</P>
+    <a href="{{ url_for('appointment') }}">Book Appointment</a>
+  </div>
+
+  <!-- Extra Info -->
+  <section class="section-box">
+    <h2>Clinic Information</h2>
+    <p><strong>Address:</strong> Add. Sr. No. 20/1, Ambegaon Bd, Uniti Medical, Opposite Vilas Tapkir STD, Dhankwadi, Pune, Maharashtra - 411046 </p>
+    <p><strong>Phone:</strong> +91 9970865752</p>
+    <p><strong>Email:</strong> info@jotirlingclinic.com</p>
+    <p><strong>Working Hours:</strong> Mon-Sat: 9:00 AM - 7:00 PM | Sunday: Closed</p>
+    <p><strong>Emergency Contact:</strong> +91 91234 56789 (24/7)</p>
+  </section>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Jotirling Clinic. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

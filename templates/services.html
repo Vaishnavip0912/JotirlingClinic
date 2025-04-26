@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Services - Jotirling Clinic</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<script>
+  function showPopup(title, imageUrl, description = '') {
+    // Get the dimensions of the clicked image
+    const imgElement = event.target;  // 'event.target' will give us the clicked image
+    const imgWidth = imgElement.width;  // Get the width of the clicked image
+    const imgHeight = imgElement.height; // Get the height of the clicked image
+
+    // Create the overlay and popup elements
+    const overlay = document.createElement('div');
+    overlay.classList.add('popup-overlay');
+
+    const popup = document.createElement('div');
+    popup.classList.add('popup-box');
+
+    // Create the image element with the same size as the clicked image
+    const popupImage = document.createElement('img');
+    popupImage.src = imageUrl;  // The image URL is passed to this variable
+    popupImage.alt = title;
+    popupImage.style.width = `${imgWidth}px`;  // Set the width of the popup image
+    popupImage.style.height = `${imgHeight}px`; // Set the height of the popup image
+
+    // Populate the popup content
+    popup.innerHTML = `
+      <span class="close-btn" onclick="this.parentElement.parentElement.remove()">×</span>
+      <h2>${title}</h2>
+      ${description ? `<p>${description}</p>` : ''}
+    `;
+
+    // Insert the image inside the popup
+    popup.insertBefore(popupImage, popup.querySelector('h2'));
+
+    // Append the popup to the overlay
+    overlay.appendChild(popup);
+
+    // Add the overlay to the body
+    document.body.appendChild(overlay);
+  }
+</script>
+
+  
+<body>
+
+<header>
+  <h1>🌿 Jotirling Clinic</h1>
+  <p> <center> Our Services</center> </p>
+</header>
+
+
+<nav>
+  <a href="{{ url_for('home') }}">Home</a>
+  <a href="{{ url_for('about') }}">About Us</a>
+  <a href="{{ url_for('services_page') }}">Services</a>
+  <a href="{{ url_for('gallery') }}">Gallery</a>
+  <a href="{{ url_for('appointment') }}">Appointment</a>
+  <a href="{{ url_for('contact') }}">Contact</a>
+
+</nav>
+
+<p class="section-description"> <center>
+    At our clinic, we offer a wide range of medical services designed to meet the health and wellness needs of our patients. Our dedicated team is committed to providing high-quality, compassionate care for every stage of life.
+  </center> 
+</p>
+
+<!-- Popup Modal -->
+<div id="popup" class="popup-overlay" style="display:none;">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <img id="popup-image" src="" alt="">
+    <h2 id="popup-title"></h2>
+    <p id="popup-description"></p>
+  </div>
+</div>
+
+<section id="services">
+  <h2> <center >Our Services</center> </h2>
+  <div class="service-list">
+    <div class="service-card" onclick="showPopup('Cardiology', '{{ url_for('static', filename='car.jpg') }}', 'Expert cardiology services for heart health.')">
+      <img src="{{ url_for('static', filename='car.jpg') }}" alt="Cardiology">
+      <h3>Cardiology</h3>
+    </div>
+
+    <div class="service-card" onclick="showPopup('General Checkup', '{{ url_for('static', filename='general.png') }}', 'Comprehensive health checkups for all ages.')">
+      <img src="{{ url_for('static', filename='general.png') }}" alt="General Checkup">
+      <h3>General Checkup</h3>
+    </div>
+
+    <div class="service-card" onclick="showPopup('Pediatrics', '{{ url_for('static', filename='child.png') }}', 'Specialized care for children and pediatric treatments.')">
+      <img src="{{ url_for('static', filename='child.png') }}" alt="Pediatrics">
+      <h3>Pediatrics</h3>
+    </div>
+
+    <div class="service-card" onclick="showPopup('Dental Care', '{{ url_for('static', filename='dental.jpg') }}', 'Complete dental care for maintaining oral health.')">
+      <img src="{{ url_for('static', filename='dental.jpg') }}" alt="Dental Care">
+      <h3>Dental Care</h3>
+    </div>
+
+    <div class="service-card" onclick="showPopup('Diabetes Management', '{{ url_for('static', filename='diabetes.jpg') }}', 'Effective management of diabetes for a healthy lifestyle.')">
+      <img src="{{ url_for('static', filename='diabetes.jpg') }}" alt="Diabetes Management">
+      <h3>Diabetes Management</h3>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Jotirling Clinic. All rights reserved.</p>
+</footer>
+
+</body>
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img id="popup-image" src="" alt="Service Image">
+    <h3 id="popup-title"></h3>
+    <p id="popup-description"></p>
+  </div>
+</div>
+
+
+
+</html>

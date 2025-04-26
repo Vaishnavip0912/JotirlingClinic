@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Appointment - Jotirling Clinic</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e8f5e9;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    text-align: center;
+    padding: 20px;
+    background-color: #2e7d32;
+    color: white;
+  }
+
+  nav {
+    background-color: #4caf50;
+    padding: 10px;
+    text-align: center;
+  }
+
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+  }
+
+  form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+    color: #2e7d32;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+
+  button {
+    margin-top: 25px;
+    padding: 14px;
+    background-color: #2e7d32;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #1b5e20;
+  }
+
+  .success {
+    color: #ffffff;
+    background-color: #28a745; /* Green background */
+    padding: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #28a745; /* Green border */
+  }
+
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #4caf50;
+    color: white;
+    margin-top: 40px;
+  }
+</style>
+
+</head>
+<body>
+
+<header>
+  <h1>🌿 Jotirling Clinic</h1>
+  <p>Book an Appointment</p>
+</header>
+
+<nav>
+  <a href="{{ url_for('home') }}">Home</a>
+  <a href="{{ url_for('about') }}">About Us</a>
+  <a href="{{ url_for('services_page') }}">Services</a>
+  <a href="{{ url_for('gallery') }}">Gallery</a>
+  <a href="{{ url_for('appointment') }}">Appointment</a>
+  <a href="{{ url_for('contact') }}">Contact</a>
+
+</nav>
+
+<div class="container">
+  <section id="appointment">
+    <h2 style="text-align: center;">Book an Appointment</h2>
+
+   {% if request.args.get('success') == 'true' %}
+      <script type="text/javascript">
+        alert('Appointment submitted successfully!');
+      </script>
+    {% endif %}
+
+
+    <!-- Appointment Form -->
+    <form method="POST" action="{{ url_for('appointment') }}">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="message">Additional Message</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+    {% if request.args.get('success') == 'true' %}
+       <p class="success">Appointment submitted successfully!</p>
+    {% endif %}
+
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2025 Jotirling Clinic. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
